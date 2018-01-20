@@ -18,8 +18,8 @@ class App extends Component {
   }
 
   renderCampers() {
-    if (this.props.campers === null) return null;
-    return this.props.campers.map((camper, idx) => {
+    if (this.props.recentCampers === null) return null;
+    return this.props.recentCampers.map((camper, idx) => {
       return (
         <li key={idx}>{camper.username}</li>
       );
@@ -41,7 +41,8 @@ class App extends Component {
 
 const mapStateToProps = ({ core }) => {
   return {
-    campers: core.campers,
+    allTimeCampers: core.allTimeCampers,
+    recentCampers: core.recentCampers,
     loading: core.loading
   };
 };
